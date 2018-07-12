@@ -24,13 +24,11 @@ public class BookReader {
             while ((symbol = reader.read
                     (buf, pageSize * pageNumber - pageSize, 1800)) != -1) {
                 reader.read(buf, pageSize * pageNumber - pageSize, 1800);
+                System.out.print(reader.toString());
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
-//        System.out.println(page.toString());
-
     }
 }
 
