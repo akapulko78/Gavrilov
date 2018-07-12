@@ -19,19 +19,18 @@ public class BookReader {
         try (BufferedReader reader = new BufferedReader(
                 new FileReader("C:\\files\\fileX.txt"))) {
             int symbol;
+            char[] buf = new char[10000];
 
-            while ((reader.read()) != -1)  {
-                if (reader.read() > pageNumber * pageSize - pageSize &&
-                        reader.read() <= pageNumber * pageSize) {
-                    page.add((char) reader.read());
-                }
-                else break;
+            while ((symbol = reader.read
+                    (buf, pageSize * pageNumber - pageSize, 1800)) != -1) {
+                reader.read(buf, pageSize * pageNumber - pageSize, 1800);
             }
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(page.toString());
+//        System.out.println(page.toString());
+
     }
 }
 
