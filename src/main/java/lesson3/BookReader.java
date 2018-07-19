@@ -12,14 +12,14 @@ public class BookReader {
     final static int pageSize = 1800;
 
     public static void main(String[] args) {
-        printpage(page, 3);
+        printpage(page, 2);
     }
 
     static void printpage(List<Character> page, int pageNumber) {
         try (BufferedReader reader = new BufferedReader(
                 new FileReader("C:\\files\\fileX.txt"))) {
             int symbol;
-            char[] buf = new char[10000];
+            char[] buf = new char[100000];
 
             while ((symbol = reader.read
                     (buf, pageSize * pageNumber - pageSize, 1800)) != -1) {
