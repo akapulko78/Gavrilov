@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Monitor {
+
+
     private int index = 0;
     private static final List<String> list =
             new ArrayList<>(Arrays.asList("A", "B", "C"));
